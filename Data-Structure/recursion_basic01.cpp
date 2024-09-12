@@ -142,8 +142,7 @@ int main(){
 	int arr[5]={1,2,3,4,5};
 	vector<int>ds;
 	// reverseArray(0,4,arr,5);
-	reversArray_functional(0,arr,5,ds);
-
+	reversArray_functional(0,arr,5,ds);   // fix this
 
 	return 0;
 }
