@@ -26,12 +26,21 @@ void reverseSeries(int n){
 	reverseSeries(n-1);
 }
 
-int permutation(int n){
+int factorial(int n){
 	if(n==1 || n==0){
 		return 1;
 	}
-	int ans =n*permutation(n-1);
+	int ans =n*factorial(n-1);
 	return ans;
+}
+
+void factorial_parameterised(int i, int fact){
+	if(i==0 || i==1){
+		cout<<fact;
+		return ;
+	}
+	factorial_parameterised(i-1,fact*i);
+
 }
 
 int fibonacii(int n){
@@ -39,6 +48,31 @@ int fibonacii(int n){
 		return n;
 	}
 	return fibonacii(n-1)+fibonacii(n-2);
+}
+
+void backtrack1toN(int n){
+	if(n==0){
+		return;
+	}
+	backtrack1toN(n-1);
+	cout<<n<<endl;;
+}
+
+
+//  Functional Recursion (returns value doesn't print)
+int SeriesSum(int n){
+	if(n==0)
+		return 0;
+	return n+SeriesSum(n-1);
+}
+
+//  parameterised recursion 
+void SeriesSumStriver(int i,int sum){
+	if(i<1){
+		cout<<sum<<endl;
+		return;
+	}
+	SeriesSumStriver(i-1,sum+i);
 }
 
 int main(){
@@ -53,13 +87,23 @@ int main(){
 	//---------print 5 to 1
 	// reverseSeries(5);
 
-	// permutation n!
-	// cout<<permutation(5);
+	// ----------factorial n!
+	// cout<<factorial(5);
 
-	// fibonacii 
-	cout<<fibonacii(7);
+	// -----------fibonacii 
+	// cout<<fibonacii(7);
 
+	// ------------1toN using backtrack
+	// backtrack1toN(5);
 
+	// -----------Series Sum
+	// cout<<SeriesSum(3);
+
+	// ------- Series sum striver
+	// SeriesSumStriver(2,0);
+
+ 	// ------------factorial by parameterised recursion
+	factorial_parameterised(5,1);
 
 	return 0;
 }
