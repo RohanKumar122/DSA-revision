@@ -10,6 +10,7 @@ void printname(int n){
 	printname(n-1);
 }
 
+
 void printseries(int n){
 	if(n==0){
 		return;
