@@ -84,6 +84,7 @@ void swap(int i,int j,int arr[]){
 	arr[j]=temp;
 }
 
+
 // Parameterised Recursion 
 void reverseArray(int i,int j,int arr[],int n){
 	if(i>=j){
@@ -96,21 +97,56 @@ void reverseArray(int i,int j,int arr[],int n){
 	reverseArray(i+1,j-1,arr,n);
 }
 
-int reversArray_functional(int index,int arr[],int n,vector<int> ds){
-	if(index==n){
-		for(auto i:ds){
-			cout<<i<<" ";
+// void reversArray_functional(int index,int arr[],int n,vector<int> ds){
+// 	if(index==n){
+// 		for(auto i:ds){
+// 			cout<<i<<" ";
+// 		}
+// 		return ;
+// 	}
+	
+// 	reversArray_functional(index+1,arr,n,ds);
+// 	ds.push_back(arr[index]);
+
+// }
+
+void reversArray_functional2(int i,int j,int arr[],int n){
+	if(i>=j){
+		for(int i=0;i<n;i++){
+			cout<<arr[i]<<" ";
 		}
-		return 0 ;
+		return ;
 	}
-	ds.push_back(arr[index]);
-	reversArray_functional(index+1,arr,n,ds);
-	
-	
+	swap(i,j,arr);
+	reversArray_functional2(i+1,j-1,arr,n);
+}
+
+int palindrom(int n){
+	int rev=0;
+	while(n>0){
+		rev =(rev*10)+(n%10);
+		n=n/10;
+	}
+
+	return rev;
+}
+
+
+string palindromRecursion(int i,int j,string s){
+	if(i>=j){
+		return "String is Palindrom";
+	}
+	if(s[i]!=s[j]){
+		return "String is not Palindrom";
+	}
+	palindromRecursion(i+1,j-1,s);
+	return "String is Palindrom";
 }
 
 int main(){
 	int n =5;
+	int arr[5]={1,2,3,4,5};
+	vector<int>ds;
 	// -------print name 5 times
 
 	// printname(n);
@@ -139,10 +175,23 @@ int main(){
  	// ------------factorial by parameterised recursion
 	// factorial_parameterised(6,1);
 
-	int arr[5]={1,2,3,4,5};
-	vector<int>ds;
+	
 	// reverseArray(0,4,arr,5);
-	reversArray_functional(0,arr,5,ds);   // fix this
+	// cout<<reversArray_functional(0,arr,5,ds); // fix this
+
+
+	// --------------- reverse array
+	// reversArray_functional2(0,4,arr,5);
+
+	//-----------------Int Palindrom
+	// cout<<palindrom(21213);
+
+	//------------------String Palindrom
+	// string s="MADAM";
+	// cout<<s[1];
+
+
+	cout<<palindromRecursion(0,4,"AMNSS");
 
 	return 0;
 }
