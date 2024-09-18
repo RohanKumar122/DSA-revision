@@ -158,7 +158,7 @@ int main(){
 	// reverseSeries(5);
 
 	// ----------factorial n!
-	// cout<<factorial(5);
+	// cout<<factorial(3);
 
 	// -----------fibonacii 
 	// cout<<fibonacii(7);
@@ -191,7 +191,7 @@ int main(){
 	// cout<<s[1];
 
 
-	cout<<palindromRecursion(0,4,"AMNSS");
+	// cout<<palindromRecursion(0,4,"AMNSS");
 
 	return 0;
 }
