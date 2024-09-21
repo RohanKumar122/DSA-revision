@@ -1,36 +1,40 @@
+//  Combination Sum - I
+
 #include<iostream>
 #include<vector>
 using namespace std;
 
-
-vector combinationSum(int i,vector<int>arr,vector<int>ds,vector<vector<int>> ans,int target,int n){
+void combination_sum(int i,vector<int> &arr,vector<int>&ds ,int target,int n,vector<vector<int>> &ans){
 	if(i==n){
 		if(target==0){
-			for(auto it:ds){
-				ans.push_back(ds);
-				return 0;
-
-			} 
-			cout<<endl;
-			return;
+			ans.push_back(ds);
 		}
-
+		return;
 	}
+	if(arr[i]<=target){
 		ds.push_back(arr[i]);
-		combinationSum(i+1,arr,ds,ans,target-arr[i],n);
-		ds.pop();
-		combinationSum(i+1,arr,ds,ans,target-arr[i],n);
-
-		return ans;
+		combination_sum(i,arr,ds,target-arr[i],n,ans);
+		ds.pop_back();
+	}
+	combination_sum(i+1,arr,ds,target,n,ans);
 }
 
 
 int main(){
-	vector<int> arr ={2,3,4,6,7};
-	int n =5;
+	int i=0;
+	int n=3;
+	vector<int>arr={1,2,3};
+	int target=4;
+	int sum=0;
 	vector<int> ds;
 	vector<vector<int>> ans;
-	int target=7;
-	combinationSum(0,arr,ds,ans,target,n);
+
+	combination_sum(i,arr,ds,target,n,ans);
+	for(auto i:ans){
+		for(auto it:i){
+			cout<<it<<" ";
+		}
+		cout<<endl;
+	}
 	return 0;
 }

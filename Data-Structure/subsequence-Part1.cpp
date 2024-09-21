@@ -3,7 +3,7 @@
 #include<vector>
 using namespace std;
 
-void subsequence(int i,vector<int> arr,vector<int> ds,int n){
+void subsequence(int i,vector<int> &arr,vector<int> &ds,int n){
 	if(i==n){
 		for(auto it:ds){
 			cout<<it<<" ";
@@ -18,7 +18,7 @@ void subsequence(int i,vector<int> arr,vector<int> ds,int n){
 	subsequence(i+1,arr,ds,n);
 }
 
-void subsequence_reverse(int i,vector<int> arr,vector<int> ds,int n){
+void subsequence_reverse(int i,vector<int> &arr,vector<int>& ds,int n){
 	if(i==n){
 		for(auto it:ds){
 			if(ds.size()==0){
@@ -39,7 +39,7 @@ void subsequence_reverse(int i,vector<int> arr,vector<int> ds,int n){
 }
 
 
-void subsequence_sum(int i,vector<int> arr,vector<int>ds ,int sum,int target,int n){
+void subsequence_sum(int i,vector<int> &arr,vector<int>&ds ,int sum,int target,int n){
 	if(i==n){
 		// cout<<sum<<endl;
 		if(target==sum){
@@ -61,25 +61,6 @@ void subsequence_sum(int i,vector<int> arr,vector<int>ds ,int sum,int target,int
 	ds.pop_back();
 }
 
-// void subsequence_sum_ans(int i,vector<int> arr,vector<int>ds ,int sum,int target,int n,vector<vector<int>> ans){
-// 	if(i==n){
-// 		// cout<<sum<<endl;
-// 		if(target==sum){
-// 			ans.push_back(ds);
-// 		}
-// 		return ; 
-// 	}
-	
-// 	subsequence_sum_ans(i+1,arr,ds,sum,target,n,ans);
-// 	sum+=arr[i];
-// 	ds.push_back(arr[i]);
-	
-// 	subsequence_sum_ans(i+1,arr,ds,sum,target,n,ans);
-// 	sum-=arr[i];
-// 	ds.pop_back();
-
-// 	return ans;
-// }
 
 int main(){
 	int i=0;
@@ -90,7 +71,6 @@ int main(){
 	vector<int> ds;
 	vector<vector<int>> ans;
 	subsequence_sum(i,arr,ds,sum,target,n);
-	// cout<<subsequence_sum_ans(i,arr,ds,sum,target,n,ans);  //test
 
 	return 0;
 }
