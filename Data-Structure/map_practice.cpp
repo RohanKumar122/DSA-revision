@@ -20,9 +20,6 @@ int main(){
 	int* y=&n;
 	cout<<y<<endl;
 
-	// for(auto it:arr){
-	// 	mp[it]=;
-	// }
 
 
 	return 0;

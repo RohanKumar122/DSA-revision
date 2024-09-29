@@ -1,3 +1,7 @@
+//  Create Node using struct or class
+//  Print basic values
+//  Convert arr to Linked List
+
 #include<iostream>
 #include<vector>
 using namespace std;
