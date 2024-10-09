@@ -70,6 +70,9 @@ Node* countZero_One(Node* head){
 
 }
 
+
+//  OPTIMISED SOLUTION LEFT L.7
+
 int main(){
 	vector<int> arr ={0,1,0,0,1,1,1,2,0,2,2,2,0};
 	Node* head=combinedLinkedList(arr);
