@@ -70,8 +70,6 @@ bool palindrom(Node* head){
 			}
 			temp=temp->next;
 			st.pop();
-			
-
 	}
 	return true;
 }
