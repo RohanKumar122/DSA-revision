@@ -33,7 +33,7 @@ Node* convertArrToLL(vector<int> & arr){
 
 	for(int i =1;i<arr.size();i++){
 		Node* temp =new Node(arr[i]);
-		mover->next =temp;
+		mover->next =temp; 
 		// mover=temp;    // or use mover =mover->next 
 		mover=mover->next;
 	}

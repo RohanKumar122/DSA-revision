@@ -41,21 +41,27 @@ Node* convertArrToLL(vector<int> & arr){
 }
 
 int main(){
-	vector<int> arr1={2,3,5,7,9};
-	Node* y =new Node(arr1[1],nullptr);
-	Node* z = new Node(arr1[2]);
-	Node* head=new Node(arr1[0]);
+	// vector<int> arr1={2,3,5,7,9};
+	// Node* y =new Node(arr1[1],nullptr);
+	// Node* z = new Node(arr1[2]);
+	// Node* head=new Node(arr1[0]);
 
 
-	cout<<y->data;
-	cout<<" "<<y->next<<endl;
-	cout<<z->data;
-	cout<<" "<<z->next<<endl;
+	// cout<<y->data;
+	// cout<<" "<<y->next<<endl;
+	// cout<<z->data;
+	// cout<<" "<<z->next<<endl;
 
-	// ConvertToLL
-	vector<int> arr={1,2,3,4};
-	Node*head11 =convertArrToLL(arr);
-	cout<<head11->next->next->data;
+	// // ConvertToLL
+	// vector<int> arr={1,2,3,4};
+	// Node*head11 =convertArrToLL(arr);
+	// cout<<head11->next->next->data;
+
+
+
+	string st ="Rohan";
+
+	cout<<st.substr(4);
 
 	return 0;
 }
